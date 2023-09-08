@@ -1,0 +1,32 @@
+<% layout('layout/boilerplate') -%>
+<h1>Add your new Product here..</h1>
+<form action="/api/v1/products" method="POST">
+
+    <div class="mb-3">
+        <label for="imageUrl" class="form-label">Image Upload</label>
+        <input class="form-control" type="text" name="imageUrl" id="imageUrl">
+      </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Description</label>
+        <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="text" class="form-control" name="price" id="price" placeholder="Price">
+      </div>
+      <div class="mb-3">
+        <label for="rating" class="form-label">Rating</label>
+        <input type="number" min="1" max="5" class="form-control" name="rating" id="rating" placeholder="Ratings">
+      </div>
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Quantity">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Add Product</button>
+      </div>
+</form>

@@ -1,0 +1,34 @@
+version: "3.8"
+services:
+  node_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecommerce-app
+    environment:
+      - DB_URL=mongodb://mongodb:${MONGO_PORT}/${DB_NAME}
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:${PORT}"
+    depends_on:
+      - mongodb
+    networks:
+      - my_network
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - my_network
+
+volumes:
+  mongodb_data:
+    driver: local
+
+networks:
+  my_network:
+    driver: bridge

@@ -1,0 +1,9 @@
+# folders
+/node_modules
+/logs
+
+# Files
+
+combined.log
+.idea
+
